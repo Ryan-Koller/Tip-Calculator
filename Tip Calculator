@@ -1,0 +1,29 @@
+# Greeting the user and start the tip calculator program
+print("Hello, welcome to tip calculator")
+
+# Ask the user for the total amount of the bill and convert to a float
+bill = float(input("What was the total of the bill? "))
+
+# Ask the user what percentage tip they want to leave, and convert it to an integer
+tip = int(input("How much would you like to tip? 10 , 12 or 15?  "))
+
+# Ask the user how many people are splitting the bill and convert into an integer
+people = int(input("How many people are splitting the bill? "))
+
+# MConvert the percentage to a decimal (ex: 15% become 0.15)
+tip_as_percent = tip /100
+
+#Calculate the total tip amount by * the bill by the tip percentage
+total_tip_amount = bill * tip_as_percent
+
+# Calculate the total bull by adding the tip amount to the original bill amount
+total_bill = tip_as_percent + total_tip_amount
+
+# Calculate how much each person should pay by dividing th total bill by the number of people
+bill_per_person = total_bill / people
+
+# round the amount each person should pay to two decimal places for clarity
+final_amount = round(bill_per_person, 2)
+
+# Print out the final amount each person should pay
+print(f"Each person should pay: $ {final_amount}")
